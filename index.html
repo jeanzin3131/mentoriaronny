@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Abrir Sua Loja de Acessórios em 7 Dias - Mentoria Exclusiva</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #dc143c;
+            --dark-red: #b91c3c;
+            --accent-red: #ff4757;
+            --dark-bg: #0f0f0f;
+            --light-gray: #f8f9fa;
+            --text-gray: #6c757d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary-red) 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-100px) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 100px 0;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .price-section {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .old-price {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: #ff6b6b;
+            opacity: 0.7;
+        }
+
+        .new-price {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0,255,136,0.3);
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, var(--primary-red), var(--accent-red));
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(220,20,60,0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(220,20,60,0.6);
+            background: linear-gradient(45deg, var(--accent-red), var(--primary-red));
+        }
+
+        .section-dark {
+            background: #1a1a1a;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-red);
+        }
+
+        .benefit-card {
+            background: rgba(220,20,60,0.1);
+            border: 2px solid var(--primary-red);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(220,20,60,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+            opacity: 0;
+        }
+
+        .benefit-card:hover::before {
+            opacity: 1;
+            animation: shine 1.5s ease-in-out;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(220,20,60,0.3);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .mentor-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, var(--dark-bg) 100%);
+            position: relative;
+        }
+
+        .mentor-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .mentor-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary-red), var(--accent-red));
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            box-shadow: 0 20px 40px rgba(220,20,60,0.3);
+        }
+
+        .countdown-section {
+            background: var(--primary-red);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .countdown-item {
+            background: rgba(0,0,0,0.3);
+            padding: 1.5rem;
+            border-radius: 15px;
+            min-width: 100px;
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            display: block;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .guarantee-section {
+            background: #0d1117;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .guarantee-badge {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00ff88, #00cc6a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            color: white;
+            box-shadow: 0 0 30px rgba(0,255,136,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .countdown-timer {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .countdown-item {
+                min-width: 80px;
+                padding: 1rem;
+            }
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25d366;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            z-index: 1000;
+            animation: bounce 2s infinite;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">
+                        ABRA SUA LOJA DE <span style="color: var(--accent-red);">ACESSÓRIOS</span> EM APENAS <span style="color: #00ff88;">7 DIAS</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Mentoria presencial exclusiva que vai te ensinar TUDO o que você precisa para montar e lucrar com sua própria loja de acessórios para celular
+                    </p>
+                    
+                    <div class="price-section">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <div class="old-price">De R$ 12.000</div>
+                                <div class="new-price">R$ 9.500</div>
+                                <small class="text-warning">💳 Parcelado em até 12x</small>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="cta-button w-100" onclick="scrollToContact()">
+                                    <i class="fas fa-rocket me-2"></i>
+                                    QUERO PARTICIPAR AGORA!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <div class="hero-image">
+                        <i class="fas fa-mobile-alt" style="font-size: 8rem; color: var(--accent-red); opacity: 0.8;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+        <div class="container">
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">⏰ ÚLTIMAS VAGAS DISPONÍVEIS!</h2>
+            <p>Esta oferta expira em:</p>
+            <div class="countdown-timer">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">03</span>
+                    <span class="countdown-label">Dias</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">14</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">27</span>
+                    <span class="countdown-label">Min</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">45</span>
+                    <span class="countdown-label">Seg</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section-dark py-5">
+        <div class="container">
+            <h2 class="section-title">O QUE VOCÊ VAI APRENDER</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h4>Localização Estratégica</h4>
+                        <p>Como escolher o ponto ideal que garante alto fluxo de clientes e máximo lucro</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4>Fornecedores Exclusivos</h4>
+                        <p>Acesso à minha rede de fornecedores com os melhores preços do mercado</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Estratégias de Vendas</h4>
+                        <p>Técnicas comprovadas para vender mais e fidelizar seus clientes</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4>Gestão Completa</h4>
+                        <p>Sistema de controle de estoque, financeiro e atendimento ao cliente</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <h4>Marketing Digital</h4>
+                        <p>Como atrair clientes pelas redes sociais e Google Meu Negócio</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Aspectos Legais</h4>
+                        <p>Toda documentação necessária e como regularizar seu negócio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mentor Section -->
+    <section class="mentor-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="mentor-card">
+                        <div class="mentor-image">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h2 style="color: var(--primary-red); margin-bottom: 1rem;">RONY GOMES</h2>
+                        <h4 style="color: #00ff88; margin-bottom: 2rem;">Seu Mentor Exclusivo</h4>
+                        <p style="font-size: 1.1rem; line-height: 1.6;">
+                            Proprietário de <strong>2 lojas de sucesso</strong> no ramo de celulares e acessórios. 
+                            Com mais de 8 anos de experiência no mercado, já ajudou dezenas de empreendedores 
+                            a construírem seus próprios negócios lucrativos.
+                        </p>
+                        <div class="row text-center mt-4">
+                            <div class="col-md-4">
+                                <h3 style="color: var(--accent-red);">2</h3>
+                                <p>Lojas Próprias</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 style="color: var(--accent-red);">8+</h3>
+                                <p>Anos de Experiência</p>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 style="color: var(--accent-red);">50+</h3>
+                                <p>Alunos Bem-Sucedidos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-dark py-5">
+        <div class="container">
+            <h2 class="section-title">DEPOIMENTOS REAIS</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p>"Em apenas 15 dias já estava vendendo! O Rony me ensinou tudo, desde a escolha do ponto até as melhores estratégias de venda. Hoje faturamos R$ 15.000/mês!"</p>
+                        <strong>- Marina Silva, São Paulo</strong>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="testimonial-card">
+                        <div class="mb-3">
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                            <i class="fas fa-star text-warning"></i>
+                        </div>
+                        <p>"Investimento que mais valeu a pena na minha vida! Em 6 meses já tinha recuperado o valor investido. Hoje tenho uma renda extra de R$ 8.000 mensais."</p>
+                        <strong>- Carlos Eduardo, Rio de Janeiro</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee-section">
+        <div class="container">
+            <div class="guarantee-badge">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h2 style="color: #00ff88; margin-bottom: 1rem;">GARANTIA INCONDICIONAL</h2>
+            <h4 style="margin-bottom: 2rem;">30 DIAS OU SEU DINHEIRO DE VOLTA</h4>
+            <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">
+                Se por qualquer motivo você não ficar 100% satisfeito com a mentoria, 
+                devolvemos todo o seu investimento sem fazer perguntas. 
+                Esse é nosso compromisso com o seu sucesso!
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="hero-section" id="contact" style="min-height: 60vh;">
+        <div class="container">
+            <div class="row justify-content-center text-center hero-content">
+                <div class="col-lg-8">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">
+                        NÃO PERCA ESSA OPORTUNIDADE ÚNICA!
+                    </h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 3rem;">
+                        São apenas <strong style="color: var(--accent-red);">10 vagas disponíveis</strong> 
+                        para garantir atendimento personalizado e resultados excepcionais.
+                    </p>
+                    
+                    <div class="price-section" style="max-width: 500px; margin: 0 auto;">
+                        <div class="old-price mb-2">De R$ 12.000</div>
+                        <div class="new-price mb-3">R$ 9.500</div>
+                        <button class="cta-button w-100 mb-3" onclick="openWhatsApp()">
+                            <i class="fab fa-whatsapp me-2"></i>
+                            RESERVAR MINHA VAGA AGORA!
+                        </button>
+                        <small class="text-warning">
+                            <i class="fas fa-lock me-1"></i>
+                            Pagamento 100% Seguro • Parcelamento em até 12x
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5511999999999?text=Olá! Quero participar da mentoria para abrir minha loja de acessórios em 7 dias!" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const endTime = now + (3 * 24 * 60 * 60 * 1000) + (14 * 60 * 60 * 1000) + (27 * 60 * 1000) + (45 * 1000);
+            
+            const timer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = endTime - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("days").innerHTML = String(days).padStart(2, '0');
+                document.getElementById("hours").innerHTML = String(hours).padStart(2, '0');
+                document.getElementById("minutes").innerHTML = String(minutes).padStart(2, '0');
+                document.getElementById("seconds").innerHTML = String(seconds).padStart(2, '0');
+                
+                if (distance < 0) {
+                    clearInterval(timer);
+                    document.querySelector('.countdown-section').innerHTML = '<div class="container text-center"><h2>OFERTA EXPIRADA!</h2></div>';
+                }
+            }, 1000);
+        }
+
+        // Smooth scroll to contact
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // WhatsApp function
+        function openWhatsApp() {
+            window.open('https://wa.me/5511999999999?text=Olá! Quero participar da mentoria para abrir minha loja de acessórios em 7 dias!', '_blank');
+        }
+
+        // Initialize countdown on page load
+        updateCountdown();
+
+        // Add scroll animations
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.benefit-card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight - 100) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize card animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.benefit-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(50px)';
+                card.style.transition = 'all 0.6s ease';
+            });
+        });
+    </script>
+</body>
+</html>
